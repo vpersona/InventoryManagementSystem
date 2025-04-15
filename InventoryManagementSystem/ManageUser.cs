@@ -17,7 +17,7 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Documents\InventoryDb.mdf;Integrated Security=True;Connect Timeout=30");    
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Documents\InventoryDb.mdf;Integrated Security=True;Connect Timeout=30");
         private void label3_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -40,10 +40,10 @@ namespace InventoryManagementSystem
 
             }
         }
-
+        // Add user
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 Con.Open();
@@ -51,16 +51,60 @@ namespace InventoryManagementSystem
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Successfully Added");
                 Con.Close();
+                populate();
             }
             catch
             {
 
             }
         }
-
+        //show newly added user in database 
         private void ManageUser_Load(object sender, EventArgs e)
         {
             populate();
         }
+        //Delete  user where the phone number is *** (primary key)
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (TelephoneTb.Text == "")
+            {
+                MessageBox.Show("Enter The Users Phone Number");
+            }
+            else
+            {
+                Con.Open();
+                string myquery = "delete from UserTb where UPhone ='" + TelephoneTb.Text + "';";
+                SqlCommand cmd = new SqlCommand(myquery, Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("User Successfully Deleted");
+
+                Con.Close();
+                populate();
+            }
+        }
+        //If you click on data in db table, data will transfer to the labels on the left side
+
+        private void UsersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        {
+
+            if (e.RowIndex >= 0) // check if you clicked on the right place
+            {
+                DataGridViewRow row = UsersGV.Rows[e.RowIndex];
+
+                if (row.Cells.Count >= 4) // check if there is enough data
+                {
+                    UsernameTb.Text = row.Cells[0].Value?.ToString();
+                    FullNameTb.Text = row.Cells[1].Value?.ToString();
+                    PasswordTb.Text = row.Cells[2].Value?.ToString();
+                    TelephoneTb.Text = row.Cells[3].Value?.ToString();
+                }
+            }
+
+
+        }
     }
 }
+    
+

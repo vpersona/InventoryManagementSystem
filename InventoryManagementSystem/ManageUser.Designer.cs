@@ -42,6 +42,7 @@
             this.UsersGV = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGV)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +152,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -176,6 +178,7 @@
             this.UsersGV.RowTemplate.Height = 24;
             this.UsersGV.Size = new System.Drawing.Size(613, 381);
             this.UsersGV.TabIndex = 9;
+            this.UsersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersGV_CellContentClick);
             // 
             // panel2
             // 
@@ -198,11 +201,23 @@
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label4.Location = new System.Drawing.Point(530, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 29);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "USERS LIST";
+            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 650);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.UsersGV);
             this.Controls.Add(this.button4);
@@ -243,5 +258,6 @@
         private System.Windows.Forms.DataGridView UsersGV;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
