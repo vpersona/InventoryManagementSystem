@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.UsernameTb = new System.Windows.Forms.TextBox();
             this.FullNameTb = new System.Windows.Forms.TextBox();
             this.PasswordTb = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.UsersGV = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGV)).BeginInit();
@@ -59,16 +59,17 @@
             this.panel1.Size = new System.Drawing.Size(983, 100);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(415, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Users";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(947, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "X";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -80,6 +81,17 @@
             this.label2.Size = new System.Drawing.Size(438, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "INVENTORY MANAGEMENT SYSTEM";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(415, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Manage Users";
             // 
             // UsernameTb
             // 
@@ -139,6 +151,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -188,18 +201,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(983, 38);
             this.panel2.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(947, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "X";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
