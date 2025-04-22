@@ -43,8 +43,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -226,17 +226,6 @@
             this.panel3.Size = new System.Drawing.Size(168, 65);
             this.panel3.TabIndex = 19;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(7, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Manage Customers";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -248,6 +237,17 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Count";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(7, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Manage Customers";
             // 
             // panel4
             // 
@@ -333,6 +333,7 @@
             this.Controls.Add(this.CustomerNameTb);
             this.Controls.Add(this.CustomerIdTb);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerId";
