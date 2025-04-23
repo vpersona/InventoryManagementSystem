@@ -46,11 +46,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.CustomerNameTb = new System.Windows.Forms.TextBox();
             this.OrderGV = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Uprc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsGV)).BeginInit();
@@ -241,57 +236,13 @@
             // 
             // OrderGV
             // 
-            this.OrderGV.BackgroundColor = System.Drawing.Color.White;
-            this.OrderGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OrderGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OrderGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Number,
-            this.Prod,
-            this.Quantity,
-            this.Uprc,
-            this.TotalPrice});
-            this.OrderGV.Location = new System.Drawing.Point(285, 316);
+            this.OrderGV.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.OrderGV.ColumnHeadersHeight = 29;
+            this.OrderGV.Location = new System.Drawing.Point(271, 326);
             this.OrderGV.Name = "OrderGV";
             this.OrderGV.RowHeadersWidth = 51;
-            this.OrderGV.RowTemplate.Height = 24;
-            this.OrderGV.Size = new System.Drawing.Size(668, 243);
-            this.OrderGV.TabIndex = 38;
-            this.OrderGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Number
-            // 
-            this.Number.HeaderText = "Number";
-            this.Number.MinimumWidth = 6;
-            this.Number.Name = "Number";
-            this.Number.Width = 125;
-            // 
-            // Prod
-            // 
-            this.Prod.HeaderText = "Product";
-            this.Prod.MinimumWidth = 6;
-            this.Prod.Name = "Prod";
-            this.Prod.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
-            // 
-            // Uprc
-            // 
-            this.Uprc.HeaderText = "UPrice";
-            this.Uprc.MinimumWidth = 6;
-            this.Uprc.Name = "Uprc";
-            this.Uprc.Width = 125;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.HeaderText = "TotalPrice";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Width = 125;
+            this.OrderGV.Size = new System.Drawing.Size(682, 233);
+            this.OrderGV.TabIndex = 40;
             // 
             // ManageOrders
             // 
@@ -348,10 +299,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox CustomerNameTb;
         private System.Windows.Forms.DataGridView OrderGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Uprc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+     
     }
 }

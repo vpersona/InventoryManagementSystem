@@ -15,7 +15,18 @@ namespace InventoryManagementSystem
     {
         public ManageOrders()
         {
+                      
+            
+
             InitializeComponent();
+
+            table.Columns.Add("Num", typeof(int));
+            table.Columns.Add("Product", typeof(string));
+            table.Columns.Add("Qty", typeof(int));
+            table.Columns.Add("UPrice", typeof(int));
+            table.Columns.Add("TotalPrice", typeof(int));
+
+            OrderGV.DataSource = table; 
         }
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Documents\InventoryDb.mdf;Integrated Security=True;Connect Timeout=30");
 
@@ -77,10 +88,15 @@ namespace InventoryManagementSystem
             }
         }
 
+
+
+        DataTable table = new DataTable();
         int num = 0;
         int uprice, totprice, qty;
         string product;
         int flag = 0;
+        
+
 
         private void ManageOrders_Load(object sender, EventArgs e)
         {
@@ -103,18 +119,40 @@ namespace InventoryManagementSystem
 
         private void ProductsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = ProductsGV.Rows[e.RowIndex];
-            product = row.Cells[0].Value.ToString();
-            //qty = Convert.ToInt32(QuantityTb.Text);
-            uprice = Convert.ToInt32(row.Cells[3].Value.ToString());
-            // totprice = qty*uprice;
-            flag = 1;
+            if (e.RowIndex >= 0) 
+            {
+                DataGridViewRow row = ProductsGV.Rows[e.RowIndex];
+
+                product = row.Cells[1].Value.ToString();
+                uprice = Convert.ToInt32(row.Cells[3].Value); 
+
+                flag = 1;
+            }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
+            if (QuantityTb.Text == "")
+            {
+                MessageBox.Show("Enter the Quantity of Products");
+            }
+            else if (flag == 0)
+            {
+                MessageBox.Show("Select the Product");
+            }
+            else
+            {
+                
+                num = num + 1;
+                qty = Convert.ToInt32(QuantityTb.Text);
+                totprice = qty*uprice;
+        
+                table.Rows.Add(num, product, qty, uprice, totprice);
+                OrderGV.DataSource = table;
+                flag = 0;
+            }
         }
 
         private void SearchCombo_SelectionChangeCommitted(object sender, EventArgs e)
