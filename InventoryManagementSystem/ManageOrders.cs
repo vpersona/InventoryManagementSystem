@@ -87,7 +87,19 @@ namespace InventoryManagementSystem
 
             }
         }
+        void UpdateProduct()
+        {
+            Con.Open();
+            
+          
 
+            int newQty = stock - Convert.ToInt32(QuantityTb.Text);
+            string query = "update ProductTbl set ProdQty = " + newQty + "where ProdId=" +prodId+";";
+            SqlCommand cmd = new SqlCommand(query, Con);
+            cmd.ExecuteNonQuery();
+            Con.Close();
+            populateProducts();
+        }
 
 
         DataTable table = new DataTable();
@@ -95,6 +107,8 @@ namespace InventoryManagementSystem
         int uprice, totprice, qty;
         string product;
         int flag = 0;
+        int stock;
+        int prodId;
         
 
 
@@ -104,6 +118,8 @@ namespace InventoryManagementSystem
             populateProducts();
             FillCategory();
             
+
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -114,7 +130,8 @@ namespace InventoryManagementSystem
         private void CustomersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = CustomersGV.Rows[e.RowIndex];
-            CustomerIdTb.Text = row.Cells[0].Value?.ToString();
+            CustIdTb.Text = row.Cells[0].Value?.ToString();
+            CustNameTb.Text = row.Cells[1].Value?.ToString();
         }
 
         private void ProductsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -122,18 +139,18 @@ namespace InventoryManagementSystem
             if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = ProductsGV.Rows[e.RowIndex];
-
+                stock = Convert.ToInt32(row.Cells[2].Value.ToString());
                 product = row.Cells[1].Value.ToString();
                 uprice = Convert.ToInt32(row.Cells[3].Value); 
-
+                prodId = Convert.ToInt32(row.Cells[0].Value);
                 flag = 1;
             }
 
         }
-
+        int sum = 0;
         private void button1_Click(object sender, EventArgs e)
         {
-            
+           
             if (QuantityTb.Text == "")
             {
                 MessageBox.Show("Enter the Quantity of Products");
@@ -141,6 +158,10 @@ namespace InventoryManagementSystem
             else if (flag == 0)
             {
                 MessageBox.Show("Select the Product");
+            }
+            else if (Convert.ToInt32(QuantityTb.Text)>stock)
+            {
+                MessageBox.Show("Not Enough Stock Avaible");
             }
             else
             {
@@ -152,6 +173,39 @@ namespace InventoryManagementSystem
                 table.Rows.Add(num, product, qty, uprice, totprice);
                 OrderGV.DataSource = table;
                 flag = 0;
+                UpdateProduct();
+            }
+            sum = sum + totprice;
+            TotAmount.Text = sum.ToString();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (OrderIdTb.Text == ""|| CustIdTb.Text ==""|| CustNameTb.Text==""|| TotAmount.Text == "")
+            {
+                MessageBox.Show("Fill the Data Correctly");
+
+            }
+            else
+            {
+                
+                
+                    Con.Open();
+                    SqlCommand cmd = new SqlCommand("insert into OrdersTbl values('" + OrderIdTb.Text + "','" + CustIdTb.Text + "','" + CustNameTb.Text + "','" + OrderDt.Value.ToString("yyyy-MM-dd")
+                     + "','" +TotAmount.Text+"')", Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Order Successfully Added");
+                    Con.Close();
+                //populate();
+                try 
+                { 
+                
+                }
+                catch
+                {
+                    MessageBox.Show("Blad");
+                }
             }
         }
 

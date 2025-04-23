@@ -36,16 +36,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CustomersGV = new System.Windows.Forms.DataGridView();
             this.OrderIdTb = new System.Windows.Forms.TextBox();
-            this.CustomerIdTb = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.CustIdTb = new System.Windows.Forms.TextBox();
+            this.OrderDt = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.SearchCombo = new System.Windows.Forms.ComboBox();
             this.ProductsGV = new System.Windows.Forms.DataGridView();
             this.QuantityTb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.CustomerNameTb = new System.Windows.Forms.TextBox();
+            this.CustNameTb = new System.Windows.Forms.TextBox();
             this.OrderGV = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TotAmount = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsGV)).BeginInit();
@@ -140,22 +144,22 @@
             this.OrderIdTb.TabIndex = 22;
             this.OrderIdTb.Text = "OrderId";
             // 
-            // CustomerIdTb
+            // CustIdTb
             // 
-            this.CustomerIdTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CustomerIdTb.Location = new System.Drawing.Point(12, 359);
-            this.CustomerIdTb.Name = "CustomerIdTb";
-            this.CustomerIdTb.Size = new System.Drawing.Size(144, 27);
-            this.CustomerIdTb.TabIndex = 23;
-            this.CustomerIdTb.Text = "CustomerId";
+            this.CustIdTb.Enabled = false;
+            this.CustIdTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CustIdTb.Location = new System.Drawing.Point(12, 359);
+            this.CustIdTb.Name = "CustIdTb";
+            this.CustIdTb.Size = new System.Drawing.Size(144, 27);
+            this.CustIdTb.TabIndex = 23;
             // 
-            // dateTimePicker1
+            // OrderDt
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 471);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 27);
-            this.dateTimePicker1.TabIndex = 24;
+            this.OrderDt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.OrderDt.Location = new System.Drawing.Point(12, 471);
+            this.OrderDt.Name = "OrderDt";
+            this.OrderDt.Size = new System.Drawing.Size(232, 27);
+            this.OrderDt.TabIndex = 24;
             // 
             // label5
             // 
@@ -194,8 +198,9 @@
             // QuantityTb
             // 
             this.QuantityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.QuantityTb.Location = new System.Drawing.Point(12, 532);
+            this.QuantityTb.Location = new System.Drawing.Point(558, 314);
             this.QuantityTb.Name = "QuantityTb";
+            this.QuantityTb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.QuantityTb.Size = new System.Drawing.Size(98, 27);
             this.QuantityTb.TabIndex = 35;
             // 
@@ -204,7 +209,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(12, 504);
+            this.label6.Location = new System.Drawing.Point(463, 316);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 25);
             this.label6.TabIndex = 36;
@@ -217,7 +222,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(116, 532);
+            this.button1.Location = new System.Drawing.Point(662, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 27);
             this.button1.TabIndex = 37;
@@ -225,31 +230,86 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // CustomerNameTb
+            // CustNameTb
             // 
-            this.CustomerNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CustomerNameTb.Location = new System.Drawing.Point(12, 392);
-            this.CustomerNameTb.Name = "CustomerNameTb";
-            this.CustomerNameTb.Size = new System.Drawing.Size(144, 27);
-            this.CustomerNameTb.TabIndex = 39;
-            this.CustomerNameTb.Text = "CustomerName";
+            this.CustNameTb.Enabled = false;
+            this.CustNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CustNameTb.Location = new System.Drawing.Point(12, 392);
+            this.CustNameTb.Name = "CustNameTb";
+            this.CustNameTb.Size = new System.Drawing.Size(144, 27);
+            this.CustNameTb.TabIndex = 39;
             // 
             // OrderGV
             // 
             this.OrderGV.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.OrderGV.ColumnHeadersHeight = 29;
-            this.OrderGV.Location = new System.Drawing.Point(271, 326);
+            this.OrderGV.Location = new System.Drawing.Point(271, 347);
             this.OrderGV.Name = "OrderGV";
             this.OrderGV.RowHeadersWidth = 51;
-            this.OrderGV.Size = new System.Drawing.Size(682, 233);
+            this.OrderGV.Size = new System.Drawing.Size(682, 182);
             this.OrderGV.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(541, 534);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 25);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Total Amount PLN";
+            // 
+            // TotAmount
+            // 
+            this.TotAmount.AutoSize = true;
+            this.TotAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TotAmount.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TotAmount.Location = new System.Drawing.Point(720, 534);
+            this.TotAmount.Name = "TotAmount";
+            this.TotAmount.Size = new System.Drawing.Size(23, 25);
+            this.TotAmount.TabIndex = 42;
+            this.TotAmount.Text = "0";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(12, 504);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 27);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Insert Order";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(132, 504);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(112, 27);
+            this.button3.TabIndex = 44;
+            this.button3.Text = "View Orders";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // ManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 603);
-            this.Controls.Add(this.CustomerNameTb);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.TotAmount);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.CustNameTb);
             this.Controls.Add(this.OrderGV);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
@@ -257,8 +317,8 @@
             this.Controls.Add(this.SearchCombo);
             this.Controls.Add(this.ProductsGV);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.CustomerIdTb);
+            this.Controls.Add(this.OrderDt);
+            this.Controls.Add(this.CustIdTb);
             this.Controls.Add(this.OrderIdTb);
             this.Controls.Add(this.CustomersGV);
             this.Controls.Add(this.label4);
@@ -289,16 +349,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView CustomersGV;
         private System.Windows.Forms.TextBox OrderIdTb;
-        private System.Windows.Forms.TextBox CustomerIdTb;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox CustIdTb;
+        private System.Windows.Forms.DateTimePicker OrderDt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox SearchCombo;
         private System.Windows.Forms.DataGridView ProductsGV;
         private System.Windows.Forms.TextBox QuantityTb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox CustomerNameTb;
+        private System.Windows.Forms.TextBox CustNameTb;
         private System.Windows.Forms.DataGridView OrderGV;
-     
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label TotAmount;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
