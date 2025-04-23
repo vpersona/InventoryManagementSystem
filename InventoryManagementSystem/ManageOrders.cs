@@ -209,6 +209,12 @@ namespace InventoryManagementSystem
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ViewOrders view = new ViewOrders();
+            view.Show();
+        }
+
         private void SearchCombo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
