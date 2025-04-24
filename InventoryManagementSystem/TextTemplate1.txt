@@ -4,3 +4,4 @@ README
 image credits:
 
 warehouse icon on login page - vectorsmarket15, https://www.flaticon.com/authors/vectorsmarket15
+box icon - home page "https://www.flaticon.com/free-icons/product" title="product icons">Product icons created by Ida Desi Mariana - Flaticon</a>

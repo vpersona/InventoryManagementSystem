@@ -114,6 +114,24 @@ namespace InventoryManagementSystem
                 }
             }
 
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select Count (*) from OrdersTbl where CustId = "+CustomerIdTb.Text+"",Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            OrderLabel.Text = dt.Rows[0][0].ToString();
+
+            SqlDataAdapter sda1 = new SqlDataAdapter("select Sum (TotalAmt) from OrdersTbl where CustId = " + CustomerIdTb.Text + "", Con);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            AmountLabel.Text = dt1.Rows[0][0].ToString();
+
+            SqlDataAdapter sda2 = new SqlDataAdapter("select Max(OrderDate) from OrdersTbl where CustId = " + CustomerIdTb.Text + "", Con);
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            DateLabel.Text = dt2.Rows[0][0].ToString();
+
+            Con.Close();
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -124,6 +142,13 @@ namespace InventoryManagementSystem
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomeForm hm = new HomeForm();
+            hm.Show();
+            this.Hide();
         }
     }
 }

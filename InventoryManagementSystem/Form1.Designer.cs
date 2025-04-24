@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.UsernameTb = new System.Windows.Forms.TextBox();
-            this.PasswordTb = new System.Windows.Forms.TextBox();
-            this.LoginBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LoginBtn = new System.Windows.Forms.Button();
+            this.PasswordTb = new System.Windows.Forms.TextBox();
+            this.UsernameTb = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,81 +59,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(274, 357);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(931, 673);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(99, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Login";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkGray;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(83, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(438, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "INVENTORY MANAGEMENT SYSTEM";
-            // 
-            // UsernameTb
-            // 
-            this.UsernameTb.BackColor = System.Drawing.Color.DarkGray;
-            this.UsernameTb.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.UsernameTb.Location = new System.Drawing.Point(51, 159);
-            this.UsernameTb.Name = "UsernameTb";
-            this.UsernameTb.Size = new System.Drawing.Size(171, 22);
-            this.UsernameTb.TabIndex = 2;
-            this.UsernameTb.Text = "Username";
-            // 
-            // PasswordTb
-            // 
-            this.PasswordTb.BackColor = System.Drawing.Color.DarkGray;
-            this.PasswordTb.ForeColor = System.Drawing.Color.White;
-            this.PasswordTb.Location = new System.Drawing.Point(51, 198);
-            this.PasswordTb.Name = "PasswordTb";
-            this.PasswordTb.Size = new System.Drawing.Size(171, 22);
-            this.PasswordTb.TabIndex = 3;
-            this.PasswordTb.Text = "Password";
-            this.PasswordTb.UseSystemPasswordChar = true;
-            // 
-            // LoginBtn
-            // 
-            this.LoginBtn.BackColor = System.Drawing.Color.DarkGray;
-            this.LoginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LoginBtn.Location = new System.Drawing.Point(51, 242);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(171, 44);
-            this.LoginBtn.TabIndex = 4;
-            this.LoginBtn.Text = "Login";
-            this.LoginBtn.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(48, 307);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Clear";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(85, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // checkBox1
             // 
@@ -146,15 +83,93 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // pictureBox1
+            // label4
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(48, 307);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Clear";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // LoginBtn
+            // 
+            this.LoginBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.LoginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LoginBtn.Location = new System.Drawing.Point(51, 242);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(171, 44);
+            this.LoginBtn.TabIndex = 4;
+            this.LoginBtn.Text = "Login";
+            this.LoginBtn.UseVisualStyleBackColor = false;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            // 
+            // PasswordTb
+            // 
+            this.PasswordTb.BackColor = System.Drawing.Color.DarkGray;
+            this.PasswordTb.ForeColor = System.Drawing.Color.White;
+            this.PasswordTb.Location = new System.Drawing.Point(51, 198);
+            this.PasswordTb.Name = "PasswordTb";
+            this.PasswordTb.Size = new System.Drawing.Size(171, 22);
+            this.PasswordTb.TabIndex = 3;
+            this.PasswordTb.Text = "Password";
+            this.PasswordTb.UseSystemPasswordChar = true;
+            // 
+            // UsernameTb
+            // 
+            this.UsernameTb.BackColor = System.Drawing.Color.DarkGray;
+            this.UsernameTb.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.UsernameTb.Location = new System.Drawing.Point(51, 159);
+            this.UsernameTb.Name = "UsernameTb";
+            this.UsernameTb.Size = new System.Drawing.Size(171, 22);
+            this.UsernameTb.TabIndex = 2;
+            this.UsernameTb.Text = "Username";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(99, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Login";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(931, 673);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.DarkGray;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(83, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(438, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "INVENTORY MANAGEMENT SYSTEM";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(535, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 29);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "X";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Form1
             // 
@@ -164,6 +179,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(577, 552);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -190,6 +206,7 @@
         private System.Windows.Forms.TextBox UsernameTb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

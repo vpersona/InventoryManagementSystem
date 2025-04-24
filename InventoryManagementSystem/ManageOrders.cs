@@ -215,6 +215,13 @@ namespace InventoryManagementSystem
             view.Show();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomeForm hm = new HomeForm();
+            hm.Show();
+            this.Hide();
+        }
+
         private void SearchCombo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
